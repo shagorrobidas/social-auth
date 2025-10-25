@@ -1,0 +1,61 @@
+### 🧠 Check Server Health
+GET http://localhost:8000/
+
+### 🧍‍♀️ Register New User
+POST http://localhost:8000/auth/registration/
+Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "password1": "StrongPassword123!",
+  "password2": "StrongPassword123!"
+}
+
+###
+
+### 🔐 Login User (email/password)
+POST http://localhost:8000/auth/login/
+Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "password": "StrongPassword123!"
+}
+
+###
+
+### 🔑 Google Login with Access Token
+# Replace ACCESS_TOKEN with your real Google access token
+POST http://127.0.0.1:8000/api/auth/social/google/
+Content-Type: application/json
+
+{
+  "access_token": ""
+}
+
+###
+
+### 🍏 Apple Login with Identity Token
+# Replace ID_TOKEN with your real Apple identity token
+POST http://localhost:8000/auth/social/apple/
+Content-Type: application/json
+
+{
+  "access_token": "APPLE_ID_TOKEN"
+}
+
+###
+
+### 🔁 Get JWT Refresh
+POST http://localhost:8000/auth/token/refresh/
+Content-Type: application/json
+
+{
+  "refresh": "REFRESH_TOKEN"
+}
+
+###
+
+### 🚪 Logout
+POST http://localhost:8000/auth/logout/
+Content-Type: application/json
